@@ -6,130 +6,287 @@
 <title> WOW GAMZ </title>
 
 <style>
-/* GLOBAL RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
-/* BODY STYLING */
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #0a0a0f;
-    color: #00DDFF;
-    padding: 20px;
+body{
+    font-family:Arial, sans-serif;
+    background:#0a0a0f;
+    color:#fff;
 }
 
 /* HEADER */
-header {
-    text-align: center;
-    padding: 20px;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #00ffff;
-    text-shadow: 0 0 8px #00ffff, 0 0 15px #ff00ff;
+header{
+    text-align:center;
+    padding:20px;
+    font-size:2.4rem;
+    color:#00ffff;
+    text-shadow:0 0 10px #00ffff;
 }
 
-/* GRID CONTAINER */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    gap: 18px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 10px;
+/* GAME GRID */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    max-width:1200px;
+    margin:0 auto;
+    padding:15px;
 }
 
-/* CARD */
-.card {
-    position: relative;
-    background: #111;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.card{
+    background:#111;
+    border-radius:8px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.card img {
-    width: 100%;
-    height: auto;
-    display: block;
+.card:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px #00ffff;
 }
 
-/* HOVER EFFECT */
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.4),
-                0 6px 30px rgba(255, 0, 255, 0.4);
+.card img{
+    width:100%;
+    display:block;
 }
 
-/* LABEL OVERLAY */
-.card .label {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 6px 10px;
-    background: rgba(0, 0, 0, 0.6);
-    font-size: 1rem;
-    color: #00ffff;
-    text-shadow: 0 0 6px #00ffff;
+.label{
+    padding:8px;
+    background:rgba(0,0,0,0.7);
+    color:#00ffff;
+    font-size:1rem;
 }
 
-/* RESPONSIVE BEHAVIOR */
-@media (max-width: 1000px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
-    }
+/* FULLSCREEN IFRAME */
+#webview{
+    position:fixed;
+    inset:0;
+    background:#000;
+    display:none;
+    z-index:9999;
 }
 
-@media (max-width: 650px) {
-    .gallery {
-        grid-template-columns: 1fr; /* 1 column on small phones */
-    }
+#webview iframe{
+    width:100%;
+    height:100%;
+    border:none;
+}
+
+/* EXIT BUTTON */
+#closeBtn{
+    position:absolute;
+    top:15px;
+    right:20px;
+    padding:10px 16px;
+    font-size:16px;
+    background:#ff0055;
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    z-index:10000;
+}
+
+#closeBtn:hover{
+    background:#ff3366;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .gallery{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:500px){
+    .gallery{grid-template-columns:1fr;}
 }
 </style>
 </head>
+
 <body>
 
-<header> WOW GAMZ </header>
+<header>🎮 Games Portal</header>
 
 <div class="gallery">
-    <!-- 30 Items -->
-    <!-- Replace image src with your own game thumbnails -->
-    <div class="card"><img src="https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=314,height=314,fit=cover,f=auto/b5c8b617f65be7cc4d56dd3657590ae7/temple-run-2.png"><div class="label">Game 1</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=2"><div class="label">Game 2</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=3"><div class="label">Game 3</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=4"><div class="label">Game 4</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=5"><div class="label">Game 5</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=6"><div class="label">Game 6</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=7"><div class="label">Game 7</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=8"><div class="label">Game 8</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=9"><div class="label">Game 9</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=10"><div class="label">Game 10</div></div>
 
-    <div class="card"><img src="https://picsum.photos/300/200?random=11"><div class="label">Game 11</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=12"><div class="label">Game 12</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=13"><div class="label">Game 13</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=14"><div class="label">Game 14</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=15"><div class="label">Game 15</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=16"><div class="label">Game 16</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=17"><div class="label">Game 17</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=18"><div class="label">Game 18</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=19"><div class="label">Game 19</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=20"><div class="label">Game 20</div></div>
-
-    <div class="card"><img src="https://picsum.photos/300/200?random=21"><div class="label">Game 21</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=22"><div class="label">Game 22</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=23"><div class="label">Game 23</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=24"><div class="label">Game 24</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=25"><div class="label">Game 25</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=26"><div class="label">Game 26</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=27"><div class="label">Game 27</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=28"><div class="label">Game 28</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=29"><div class="label">Game 29</div></div>
-    <div class="card"><img src="https://picsum.photos/300/200?random=30"><div class="label">Game 30</div></div>
+<!-- 30 GAME CARDS -->
+<div class="card" data-game="https://example.com/game1">
+<img src="https://picsum.photos/400/250?1">
+<div class="label">Game 1</div>
 </div>
+
+<div class="card" data-game="https://example.com/game2">
+<img src="https://picsum.photos/400/250?2">
+<div class="label">Game 2</div>
+</div>
+
+<div class="card" data-game="https://example.com/game3">
+<img src="https://picsum.photos/400/250?3">
+<div class="label">Game 3</div>
+</div>
+
+<div class="card" data-game="https://example.com/game4">
+<img src="https://picsum.photos/400/250?4">
+<div class="label">Game 4</div>
+</div>
+
+<div class="card" data-game="https://example.com/game5">
+<img src="https://picsum.photos/400/250?5">
+<div class="label">Game 5</div>
+</div>
+
+<div class="card" data-game="https://example.com/game6">
+<img src="https://picsum.photos/400/250?6">
+<div class="label">Game 6</div>
+</div>
+
+<div class="card" data-game="https://example.com/game7">
+<img src="https://picsum.photos/400/250?7">
+<div class="label">Game 7</div>
+</div>
+
+<div class="card" data-game="https://example.com/game8">
+<img src="https://picsum.photos/400/250?8">
+<div class="label">Game 8</div>
+</div>
+
+<div class="card" data-game="https://example.com/game9">
+<img src="https://picsum.photos/400/250?9">
+<div class="label">Game 9</div>
+</div>
+
+<div class="card" data-game="https://example.com/game10">
+<img src="https://picsum.photos/400/250?10">
+<div class="label">Game 10</div>
+</div>
+
+<div class="card" data-game="https://example.com/game11">
+<img src="https://picsum.photos/400/250?11">
+<div class="label">Game 11</div>
+</div>
+
+<div class="card" data-game="https://example.com/game12">
+<img src="https://picsum.photos/400/250?12">
+<div class="label">Game 12</div>
+</div>
+
+<div class="card" data-game="https://example.com/game13">
+<img src="https://picsum.photos/400/250?13">
+<div class="label">Game 13</div>
+</div>
+
+<div class="card" data-game="https://example.com/game14">
+<img src="https://picsum.photos/400/250?14">
+<div class="label">Game 14</div>
+</div>
+
+<div class="card" data-game="https://example.com/game15">
+<img src="https://picsum.photos/400/250?15">
+<div class="label">Game 15</div>
+</div>
+
+<div class="card" data-game="https://example.com/game16">
+<img src="https://picsum.photos/400/250?16">
+<div class="label">Game 16</div>
+</div>
+
+<div class="card" data-game="https://example.com/game17">
+<img src="https://picsum.photos/400/250?17">
+<div class="label">Game 17</div>
+</div>
+
+<div class="card" data-game="https://example.com/game18">
+<img src="https://picsum.photos/400/250?18">
+<div class="label">Game 18</div>
+</div>
+
+<div class="card" data-game="https://example.com/game19">
+<img src="https://picsum.photos/400/250?19">
+<div class="label">Game 19</div>
+</div>
+
+<div class="card" data-game="https://example.com/game20">
+<img src="https://picsum.photos/400/250?20">
+<div class="label">Game 20</div>
+</div>
+
+<div class="card" data-game="https://example.com/game21">
+<img src="https://picsum.photos/400/250?21">
+<div class="label">Game 21</div>
+</div>
+
+<div class="card" data-game="https://example.com/game22">
+<img src="https://picsum.photos/400/250?22">
+<div class="label">Game 22</div>
+</div>
+
+<div class="card" data-game="https://example.com/game23">
+<img src="https://picsum.photos/400/250?23">
+<div class="label">Game 23</div>
+</div>
+
+<div class="card" data-game="https://example.com/game24">
+<img src="https://picsum.photos/400/250?24">
+<div class="label">Game 24</div>
+</div>
+
+<div class="card" data-game="https://example.com/game25">
+<img src="https://picsum.photos/400/250?25">
+<div class="label">Game 25</div>
+</div>
+
+<div class="card" data-game="https://example.com/game26">
+<img src="https://picsum.photos/400/250?26">
+<div class="label">Game 26</div>
+</div>
+
+<div class="card" data-game="https://example.com/game27">
+<img src="https://picsum.photos/400/250?27">
+<div class="label">Game 27</div>
+</div>
+
+<div class="card" data-game="https://example.com/game28">
+<img src="https://picsum.photos/400/250?28">
+<div class="label">Game 28</div>
+</div>
+
+<div class="card" data-game="https://example.com/game29">
+<img src="https://picsum.photos/400/250?29">
+<div class="label">Game 29</div>
+</div>
+
+<div class="card" data-game="https://example.com/game30">
+<img src="https://picsum.photos/400/250?30">
+<div class="label">Game 30</div>
+</div>
+
+</div>
+
+<!-- FULLSCREEN WEBVIEW -->
+<div id="webview">
+    <button id="closeBtn">✕ Exit</button>
+    <iframe id="gameFrame" allowfullscreen></iframe>
+</div>
+
+<script>
+const cards = document.querySelectorAll(".card");
+const webview = document.getElementById("webview");
+const frame = document.getElementById("gameFrame");
+const closeBtn = document.getElementById("closeBtn");
+
+cards.forEach(card=>{
+    card.onclick = ()=>{
+        frame.src = card.dataset.game;
+        webview.style.display = "block";
+        document.body.style.overflow = "hidden";
+    }
+});
+
+closeBtn.onclick = ()=>{
+    frame.src = "";
+    webview.style.display = "none";
+    document.body.style.overflow = "auto";
+};
+</script>
 
 </body>
 </html>
