@@ -3,138 +3,132 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neon Games Gallery</title>
+<title>Games Gallery — 3×10 Layout</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY STYLING */
+body {
     font-family: 'Segoe UI', sans-serif;
+    background: #0a0a0f;
+    color: #fff;
+    padding: 20px;
 }
 
-body{
-    background:#050510;
-    min-height:100vh;
-    padding:30px;
-    color:#fff;
+/* HEADER */
+header {
+    text-align: center;
+    padding: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 8px #00ffff, 0 0 15px #ff00ff;
 }
 
-h1{
-    text-align:center;
-    margin-bottom:30px;
-    font-size:2.5rem;
-    color:#00ffff;
-    text-shadow:0 0 10px #00ffff, 0 0 20px #00ffff;
+/* GRID CONTAINER */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 18px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px;
 }
 
-.gallery{
-    max-width:1400px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-    gap:25px;
+/* CARD */
+.card {
+    position: relative;
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card{
-    position:relative;
-    height:260px;
-    border-radius:15px;
-    overflow:hidden;
-    cursor:pointer;
-    border:2px solid transparent;
-    background:#000;
-    transition:0.4s;
-    box-shadow:
-        0 0 10px rgba(0,255,255,0.3),
-        0 0 20px rgba(255,0,255,0.2);
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-.card:hover{
-    transform:translateY(-8px) scale(1.03);
-    border-color:#ff00ff;
-    box-shadow:
-        0 0 15px #00ffff,
-        0 0 30px #ff00ff,
-        0 0 60px rgba(255,0,255,0.8);
+/* HOVER EFFECT */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.4),
+                0 6px 30px rgba(255, 0, 255, 0.4);
 }
 
-.card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:0.5s;
+/* LABEL OVERLAY */
+.card .label {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 6px 10px;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 1rem;
+    color: #00ffff;
+    text-shadow: 0 0 6px #00ffff;
 }
 
-.card:hover img{
-    transform:scale(1.1);
-}
-
-.overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(to top, rgba(0,0,0,0.85), transparent);
-    display:flex;
-    align-items:flex-end;
-    padding:15px;
-}
-
-.overlay h2{
-    font-size:1.2rem;
-    color:#00ffff;
-    text-shadow:0 0 8px #00ffff;
-}
-
-@media(max-width:600px){
-    h1{
-        font-size:1.8rem;
+/* RESPONSIVE BEHAVIOR */
+@media (max-width: 1000px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
     }
-    .card{
-        height:220px;
+}
+
+@media (max-width: 650px) {
+    .gallery {
+        grid-template-columns: 1fr; /* 1 column on small phones */
     }
 }
 </style>
 </head>
 <body>
 
-<h1>🔥 Neon Games Gallery 🔥</h1>
+<header>🔥 Games Gallery</header>
 
 <div class="gallery">
+    <!-- 30 Items -->
+    <!-- Replace image src with your own game thumbnails -->
+    <div class="card"><img src="https://picsum.photos/300/200?random=1"><div class="label">Game 1</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=2"><div class="label">Game 2</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=3"><div class="label">Game 3</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=4"><div class="label">Game 4</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=5"><div class="label">Game 5</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=6"><div class="label">Game 6</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=7"><div class="label">Game 7</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=8"><div class="label">Game 8</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=9"><div class="label">Game 9</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=10"><div class="label">Game 10</div></div>
 
-<!-- 30 Image Boxes -->
-<div class="card"><img src="https://picsum.photos/500/500?random=1"><div class="overlay"><h2>Game 1</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=2"><div class="overlay"><h2>Game 2</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=3"><div class="overlay"><h2>Game 3</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=4"><div class="overlay"><h2>Game 4</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=5"><div class="overlay"><h2>Game 5</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=6"><div class="overlay"><h2>Game 6</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=7"><div class="overlay"><h2>Game 7</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=8"><div class="overlay"><h2>Game 8</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=9"><div class="overlay"><h2>Game 9</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=10"><div class="overlay"><h2>Game 10</h2></div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=11"><div class="label">Game 11</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=12"><div class="label">Game 12</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=13"><div class="label">Game 13</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=14"><div class="label">Game 14</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=15"><div class="label">Game 15</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=16"><div class="label">Game 16</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=17"><div class="label">Game 17</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=18"><div class="label">Game 18</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=19"><div class="label">Game 19</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=20"><div class="label">Game 20</div></div>
 
-<div class="card"><img src="https://picsum.photos/500/500?random=11"><div class="overlay"><h2>Game 11</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=12"><div class="overlay"><h2>Game 12</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=13"><div class="overlay"><h2>Game 13</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=14"><div class="overlay"><h2>Game 14</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=15"><div class="overlay"><h2>Game 15</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=16"><div class="overlay"><h2>Game 16</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=17"><div class="overlay"><h2>Game 17</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=18"><div class="overlay"><h2>Game 18</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=19"><div class="overlay"><h2>Game 19</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=20"><div class="overlay"><h2>Game 20</h2></div></div>
-
-<div class="card"><img src="https://picsum.photos/500/500?random=21"><div class="overlay"><h2>Game 21</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=22"><div class="overlay"><h2>Game 22</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=23"><div class="overlay"><h2>Game 23</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=24"><div class="overlay"><h2>Game 24</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=25"><div class="overlay"><h2>Game 25</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=26"><div class="overlay"><h2>Game 26</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=27"><div class="overlay"><h2>Game 27</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=28"><div class="overlay"><h2>Game 28</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=29"><div class="overlay"><h2>Game 29</h2></div></div>
-<div class="card"><img src="https://picsum.photos/500/500?random=30"><div class="overlay"><h2>Game 30</h2></div></div>
-
+    <div class="card"><img src="https://picsum.photos/300/200?random=21"><div class="label">Game 21</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=22"><div class="label">Game 22</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=23"><div class="label">Game 23</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=24"><div class="label">Game 24</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=25"><div class="label">Game 25</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=26"><div class="label">Game 26</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=27"><div class="label">Game 27</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=28"><div class="label">Game 28</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=29"><div class="label">Game 29</div></div>
+    <div class="card"><img src="https://picsum.photos/300/200?random=30"><div class="label">Game 30</div></div>
 </div>
 
 </body>
