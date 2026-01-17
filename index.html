@@ -14,6 +14,29 @@ body{
     color:#09ed65;
 }
 
+    /* SMOOTH SCROLLING */
+html {
+    scroll-behavior: smooth;
+}
+
+/* GPU ACCELERATION FOR SMOOTHNESS */
+.card,
+#webview,
+#webview iframe {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* DISABLE HOVER EFFECTS ON MOBILE (BOOST FPS) */
+@media (hover: none) {
+    .card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+
+    
 /* HEADER */
 header{
     text-align:center;
